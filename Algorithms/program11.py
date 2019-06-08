@@ -1,6 +1,7 @@
 import Util
+import sys
 
-day = int(input('Enter a date:'))
-month = int(input('Enter the month in numerical:'))
-year = int(input('Enter the year:'))
+day = int(sys.argv[1])
+month = int(sys.argv[2])
+year = int(sys.argv[3])
 Util.Utilities.dayofWeek(day,month,year)

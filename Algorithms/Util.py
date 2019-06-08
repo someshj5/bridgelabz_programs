@@ -1,5 +1,6 @@
 # from math import *
 class Utilities():
+#--------------------*** ANAGRAM CHECK ****------------------------------------
     @staticmethod
     def is_anagram(str1,str2):
 
@@ -14,7 +15,7 @@ class Utilities():
             # print('not an anagram')
 
 
-    #------------------------------------------------------------------   
+    #-------------------*** PRIME NUMBER CHECK ***------------------------   
     @staticmethod
     def Is_prime_number(num):
         for i in range(2,num):
@@ -25,7 +26,9 @@ class Utilities():
             else:
                 print('it is prime')
                 return True
-    #-------------------------------------------------------------------            
+
+
+    #-----------------*** PALINDROME CHECK ***--------------------------------------            
     @staticmethod
     def Is_palindrome(str1):
         rev = str1[::-1]
@@ -37,7 +40,7 @@ class Utilities():
             return False
         
     # -------------------------------------------------------------------
-    @staticmethod
+    # @staticmethod
     # def binary_search(l, r, val, arr):
     #     if l <= r:
     #         middle = (l + r) // 2
@@ -51,7 +54,8 @@ class Utilities():
     #         print('Absent')
     #         return False 
     # binary_search(1,4,3,[1,2,3,4,5,6])
-    #----------------------------------------------------------------------
+
+    #-----------------------*** BINARY SEARCH STRING ***--------------------
     @staticmethod
     def searchword(list,word):
         l = 0
@@ -66,19 +70,10 @@ class Utilities():
                 r = mid-1
         else:
             return 0
-#-------------------------------------------------------------------
-    @staticmethod
-    def to_decimal(number):
-        while len(str(number)) < 8:
-            number = number + str(0)
-        s3 = number[4:8]
-        s4 = number[0:4]
-        swap = s3 + s4
-        b = str(swap)
-        return int(b)
-    # to_decimal(4)
+    #--------------------------------------------------------------------------
 
-    #--------------------------------------------------------------------
+
+    #-------------------*** INSERTION SORT FOR STRING ***-----------------------
     @staticmethod
     def sortArrList(arr):
         for i in range (len(arr)-1):
@@ -89,7 +84,7 @@ class Utilities():
         return arr
     #     # sortArrList([9,3,5,2,1])
 
-    #-----------------------------------------------------------------------
+    #------------------------*** INSERTION SORT FOR INTEGER------------------------------
     @staticmethod
     def sort_string(str1):
         ln = len(str1)
@@ -101,7 +96,7 @@ class Utilities():
         return str1
     # sort_string('dba')
 
-    #---------------------------------------------------------------------------
+    #-------------------*** BUBBLE SORT ***----------------------------------------------
     @staticmethod
     def bubble_sort(arr):
         for i in range(len(arr)):
@@ -111,7 +106,9 @@ class Utilities():
             print(arr)            
         return arr
     #     # bubble_sort([7,1,8,2,3])
-#---------------------------------------------------------------------------------------
+
+
+    #-------------------*** INSERTION SORT ***--------------------------------------------- 
     @staticmethod
     def insertionSort(arr):
         for i in range(1,len(arr)):
@@ -123,10 +120,10 @@ class Utilities():
             arr[j+1] = key
         print(arr)
         return arr
-    #     # _ANS = __insertionSort__.__func__()
+    
 
 
-#-------------------------------------------------------------------------------------
+    #-----------------------*** PRIME NUMBERS ***-----------------------------------------
     @staticmethod
     def getprime(N,primeArr):
         for num in range(0,N+1):
@@ -139,7 +136,7 @@ class Utilities():
                     primeArr.append(num)
         print('The total prime number are:',len(primeArr))
     
-#------------------------------------------------------------------------------------   
+    #---------------------*** PRIME NUMBERS PALINDROME ***-----------------------------   
     @staticmethod
     def Palindrome_num(N1):
         for i in (N1):
@@ -151,7 +148,7 @@ class Utilities():
                 temp = temp/10
             if i == rev:
                 print(i),
-    #---------------------------------------------------------------------------------        
+    #--------------------*** PRIME NUMBERS ANAGRAM ***--------------------------------        
 
     @staticmethod
     def Prime_anagram(primearr):
@@ -162,7 +159,8 @@ class Utilities():
                 j = str(j)
                 if sorted(i) == sorted(j):
                     print(i,'and', j)
-    #----------------------------------------------------------------------------------
+
+    #-----------------*** TEMPERATURE CONVERSION ***--------------------------------------
     @staticmethod
     def Temp_conversion(temp,n):
         if n == 0:
@@ -179,28 +177,41 @@ class Utilities():
     
 
     # Temp_conversion(100,1)
-    #----------------------------------------------------------------------------------------
+
+    #------------------------*** MONTHLY PAYMNET ***-------------------------------------------
 
     @staticmethod
     def calculatePayment(P,Y,R):
         n = 12 * Y
         r = R / (12 * 100)
-        payment = (P * r)/(1 - (1 + r) ** (-n))
+        payment = (P * r) / (1 - (1 + r) ** (-n))
         print('Payment:', payment)
         return payment
-    # calculatePayment(1200,1,13)
+    # calculatePayment(1200,2,9)
 
-    #-----------------------------------------------------------------------------------------
+    #------------------------*** DAY OF WEEK ***---------------------------------------------------
     @staticmethod
     def dayofWeek(day,month,year):
-        lists = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
-        y0 = year - (14 - month) // 12
-        x = y0 + y0 // 4 - y0 // 100 + y0 // 400
-        m0 = month + 12 * ((14 - month) // 12) - 12
-        d0 = (day + x + 31 * m0 // 12) % 7
+        lists = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
+        y0 = year - ((14 - month) // 12)
+        x  = y0 + y0 // 4 - y0 // 100 + y0 // 400
+        m0 = month + 12 * ((14 - month) // 12) - 2
+        d0 = (day + x + ((31 * m0 )// 12)) % 7
         print('Day of week:', lists[d0])
-    # dayofWeek(5,6,2019)
 
-    #-----------------------------------------------------------------------------------------
 
+    #--------------------- *** VENDING MACHINE ***--------------------------------------------------------------------
+
+    @staticmethod
+    def vendingMachine(Amount):
+        list1 = [1000,500,100,50,20,10,5,1]
+        counter = [0]*10
         
+        for i ,j in zip(list1,counter):
+            if Amount >= i:
+                j = Amount // i
+                Amount = Amount - i
+                print(i ,':' ,j )
+
+    # vendingMachine()
+
