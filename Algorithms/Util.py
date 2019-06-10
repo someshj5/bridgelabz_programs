@@ -40,19 +40,18 @@ class Utilities():
             return False
         
     # -------------------------------------------------------------------
-    # @staticmethod
-    # def binary_search(l, r, val, arr):
-    #     if l <= r:
-    #         middle = (l + r) // 2
-    #         if arr[middle] == val:
-    #             print('Present')
-    #             return True
-    #         elif arr[middle] < val:
-    #             l = middle + 1
-    #         else:
-    #             r = middle - 1
-    #         print('Absent')
-    #         return False 
+    @staticmethod
+    def binary_search(l, r, val, arr): 
+        while l <= r:
+            middle = (l + r) // 2
+            if arr[middle] == val:
+                return True
+            elif arr[middle] < val:
+                l = middle + 1
+            else:
+                r = middle - 1
+           
+        return False 
     # binary_search(1,4,3,[1,2,3,4,5,6])
 
     #-----------------------*** BINARY SEARCH STRING ***--------------------

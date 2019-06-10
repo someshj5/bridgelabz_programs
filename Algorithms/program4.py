@@ -1,4 +1,7 @@
+import timeit
+
 class Utility:
+
     @staticmethod
     def searchword(list,word):
         l = 0
@@ -14,6 +17,8 @@ class Utility:
         else:
             return 0
 
+
+    
     @staticmethod
     def binary_search(l,r,val, arr):
         if l <= r:
@@ -25,6 +30,7 @@ class Utility:
             else:
                 r = middle - 1
             return False  
+    # timeit.duration(binary_search(1,4,3,[1,2,3,4,5,6])
 
     @staticmethod
     def insertionSort(arr):
@@ -38,15 +44,15 @@ class Utility:
         print(arr)
         return arr
 
-    # @staticmethod
-    # def sort_string(str1):
-    #     ln = len(str1)
-    #     for i in range(ln-1):
-    #         for j in range(i+1,ln):
-    #             if str1[i] > str1[j]:
-    #                 str1[i],str1[j] = str1[j],str1[i]
-    #     print(str1)
-    #     return str1
+    @staticmethod
+    def sort_string(str1):
+        ln = len(str1)
+        for i in range(ln-1):
+            for j in range(i+1,ln):
+                if str1[i] > str1[j]:
+                    str1[i],str1[j] = str1[j],str1[i]
+        print(str1)
+        return str1
 
 
     @staticmethod

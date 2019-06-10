@@ -1,4 +1,4 @@
-import Util
+import Util                                # importing Util module
 
 def TempConversion():
     temp = int(input('Enter a number:\n')) # Ask input as temperature

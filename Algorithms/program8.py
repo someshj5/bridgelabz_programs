@@ -1,7 +1,7 @@
-import Util
+import Util                                 # importing Util module
 
-ArrayofNum =[9,3,8,1,7,4]
-
+num = int(input('Enter the numbers:'))      #Asks for num input of integers
+ArrayofNum = list(num)                      # Assigning the num as array or list
 arr = ArrayofNum
-Util.Utilities.bubble_sort(arr)
+Util.Utilities.bubble_sort(arr)             # calls  the staticmethod from the Utilities class for bubble sort of integers
 
