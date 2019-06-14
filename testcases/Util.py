@@ -10,8 +10,8 @@ class Utilities():
         if sorted(str1) == sorted(str2):
             print('True')
             return True
-
-        return False
+        else:
+            return False
             # print('not an anagram')
 
 
@@ -74,22 +74,42 @@ class Utilities():
 
     #-------------------*** INSERTION SORT FOR STRING ***-----------------------
     @staticmethod
-    def insertionSort(arr):
-        for i in range(1, len(arr)):
-            key = arr[i]
-            j = i - 1
-            while j >= 0 and key < arr[j]:
-                arr[j + 1] = arr[j]
-                j -= 1
-            arr[j + 1] = key
-        print(arr)
-        return arr
+    def sortArrList(arr):
+        for i in range (len(arr)-1):
+            for j in range(i+1,len(arr)):
+                if arr[i] > arr[j]:
+                    arr[i],arr[j] = arr[j],arr[i]
 
-#     # sortArrList([9,3,5,2,1])
+        return arr
+    #     # sortArrList([9,3,5,2,1])
 
     #------------------------*** INSERTION SORT FOR INTEGER------------------------------
     @staticmethod
     def sort_string(str1):
+        ln = len(str1)
+        for i in range(ln-1):
+            for j in range(i+1,ln):
+                if str1[i] > str1[j]:
+                    str1[i],str1[j] = str1[j],str1[i]
+        print(str1)
+        return str1
+    # sort_string('dba')
+
+    #-------------------*** BUBBLE SORT ***----------------------------------------------
+    @staticmethod
+    def bubble_sort(arr):
+        for i in range(len(arr)-1):
+            for j in range(i+1,len(arr)):
+                if arr[i] < arr[j]:
+                    arr[i], arr[j] = arr[j] ,arr[i] 
+            print(arr)            
+        return arr
+    #     # bubble_sort([7,1,8,2,3])
+
+
+    #-------------------*** INSERTION SORT ***--------------------------------------------- 
+    @staticmethod
+    def insertionSort(arr):
         for i in range(1,len(arr)):
             key = arr[i]
             j = i-1
@@ -99,21 +119,7 @@ class Utilities():
             arr[j+1] = key
         print(arr)
         return arr
-    # sort_string('dba')
-
-    #-------------------*** BUBBLE SORT ***----------------------------------------------
-    @staticmethod
-    def bubble_sort(arr):
-        for i in range(len(arr)):
-            for j in range(len(arr)):
-                if arr[i] < arr[j]:
-                    arr[i], arr[j] = arr[j] ,arr[i] 
-            
-        return arr
-    #     # bubble_sort([7,1,8,2,3])
-
-
-
+    
 
 
     #-----------------------*** PRIME NUMBERS ***-----------------------------------------
