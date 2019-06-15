@@ -15,10 +15,28 @@ class LinkedList:
 
 
 
-    # def append(self, new_value):
-    #     newnode = Node(new_value)
-    #     newnode.next = self.head
-    #     self.head = newnode
+    def ordered(self):
+        for i in range(0, 8):
+            if self.head is None:
+                newnode = Node
+                self.head = newnode
+                temp = self.head
+                while temp != None:
+                    if temp.value > temp.next.value:
+                        newnode.next = temp
+                        self.head = newnode
+                        # temp.value, temp.next.value = temp.next.value , temp.value
+                    # temp = temp.next
+                else:
+                    prev = self.head
+                    while temp != None:
+                        if temp.value > value:
+                            newnode.next = prev.next
+                            prev.next = newnode
+                        prev = temp
+                        temp = temp.next
+                        prev.next = newnode
+
 
     def display(self):
         temp = self.head
@@ -31,18 +49,7 @@ class LinkedList:
         if temp is None:
             return
         else:
-            popped = temp.value
-            temp = temp.next
-        # prev = None
-        # temp = self.head
-        # while temp:
-        #     prev = temp
-        #     temp = temp.next
-        # if pos == None:
-        #     self.head = temp.next
-        # # else:
-        # #     prev.next = temp.next
-
+            return temp.value
 
     def search(self,wrd):
         temp = self.head
@@ -68,8 +75,14 @@ class LinkedList:
 
 link = LinkedList()
 
-with open('/home/admin9/Week2/Data structures/file_num.txt','r') as f2:
+with open('/home/admin9/Week1/Data structures/file_num.txt','r') as f2:
     mydata = f2.read().split()
-    link.insert(mydata)
-    link.pop()
+    print(mydata)
+    for i in mydata:
+        link.insert(i)
+        # print(i)
+        link.ordered()
     link.display()
+# link.pop()
+# link.display()
+# mylist = link.sort()

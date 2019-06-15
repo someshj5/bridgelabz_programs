@@ -104,11 +104,12 @@ class Utilities():
     #-------------------*** BUBBLE SORT ***----------------------------------------------
     @staticmethod
     def bubble_sort(arr):
-        for i in range(len(arr)):
-            for j in range(len(arr)):
-                if arr[i] < arr[j]:
-                    arr[i], arr[j] = arr[j] ,arr[i] 
-            
+        n = len(arr)
+        for i in range(n):
+            for j in range(0, n-i-1):
+                if arr[j] > arr[j+1]:
+                    arr[j], arr[j+1] = arr[j+1] ,arr[j]
+        print(arr)
         return arr
     #     # bubble_sort([7,1,8,2,3])
 

@@ -1,4 +1,5 @@
-import numpy as np
+# import numpy as np
+# from numpy import *
 
 
 class Queue:
@@ -16,24 +17,47 @@ class Queue:
         if self.is_empty():
             return None
         else:
-            return self.queue.pop()
+            print(self.queue.pop())
 
     def size(self):
         return len(self.queue)
 
-q =Queue()
+    def dispaly(self, val):
+        print(val)
 
-week=['SUN', 'MON', 'TUE', 'WED', 'THUR', 'FRI', 'SAT']
-day = [1, 2, 3, 4, 5, 6 ,7,
-       8 , 9, 10, 11, 12, 13, 14,
-       15, 16, 17, 18, 19, 20, 21,
-       22, 23, 24, 25, 26, 27, 28,
-       29, 30, 31]
 
-np.
-# # day = np.arange(31)
-# print(np.arange(31))
+q = Queue()
 
-# for i in range(len(week)):
-#     for j in range(0,31):
-#         print(day)
+a = ['SUN', 1, 8, 15, 22, 29]
+b = ['MON', 2, 9, 16, 23, 30]
+c = ['TUE', 3, 10, 17, 24, 31]
+d = ['WED', 4, 11, 18, 25, ' ']
+e = ['THU', 5, 12, 19, 26, ' ']
+f = ['FRI', 6, 13, 20, 27, ' ']
+g = ['SAT', 7, 14, 21, 28, ' ']
+
+q.enqueue(a)
+q.enqueue(b)
+q.enqueue(c)
+q.enqueue(d)
+q.enqueue(e)
+q.enqueue(f)
+q.enqueue(g)
+
+# q.dispaly(a)
+# q.dispaly(b)
+# q.dispaly(c)
+# q.dispaly(d)
+# q.dispaly(e)
+# q.dispaly(f)
+# q.dispaly(g)
+
+q.dequeue()
+q.dequeue()
+q.dequeue()
+q.dequeue()
+q.dequeue()
+q.dequeue()
+q.dequeue()
+
+

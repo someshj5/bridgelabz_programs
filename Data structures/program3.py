@@ -10,7 +10,7 @@ class Stack:
         self.items.append(data)
 
     def pop(self):
-        self.items.pop()
+        return self.items.pop()
 
     def size(self):
         len(self.items)
@@ -18,7 +18,7 @@ class Stack:
     def peak(self):
         if self.is_empty():
             return None
-        self.items[-1]
+        return self.items[-1]
 
 stack = Stack()
 
