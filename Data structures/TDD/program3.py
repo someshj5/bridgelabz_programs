@@ -25,6 +25,7 @@ stack = Stack()                        # assigning the stack as object
 
 mydata = '(5+6)∗(7+8)/(4+3)(5+6)∗(7+8)/(4+3)'  # expression to check for balanced parentheses
 
+
 def balanced(mydata):
     for i in mydata:                         # iterate through the expression in mydata
         if i == '(':
