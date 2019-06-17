@@ -1,8 +1,9 @@
-from program11 import primeArr, blocks
+from program11 import primeArr, blocks # importing prime numbers array
 
 primearr = primeArr
 
-def Prime_anagram(primearr):
+
+def Prime_anagram(primearr):   # function to get anagram of prime numbers
     for i in primearr:
         for j in primearr:
             i = str(i)

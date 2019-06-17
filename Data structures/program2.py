@@ -1,69 +1,49 @@
 class Node:
-    def __init__(self, value):
-        self.value = value
+
+    def __init__(self, data):                  # Constructor to initialize the node object
+        self.data = data
         self.next = None
 
 
 class LinkedList:
-    def __init__(self):
+
+    def __init__(self):                         # Function to initialize head
         self.head = None
 
-    def insert(self, nw_value):
-        newnode = Node(nw_value)
-        newnode.next = self.head
-        self.head = newnode
+    def sortedInsert(self, new_node):
+        if self.head is None:                   # Special case for the empty linked list
+            new_node.next = self.head
+            self.head = new_node
 
+        elif self.head.data >= new_node.data:   # Special case for head at end
+            new_node.next = self.head
+            self.head = new_node
+        else:                                   # Locate the node before the point of insertion
+            current = self.head
+            while(current.next is not None and
+            current.next.data < new_node.data):
+                current = current.next
+            new_node.next = current.next
+            current.next = new_node
 
-
-    def ordered(self):
-        for i in range(0, 8):
-            if self.head is None:
-                newnode = Node
-                self.head = newnode
-                temp = self.head
-                while temp != None:
-                    if temp.value > temp.next.value:
-                        newnode.next = temp
-                        self.head = newnode
-                        # temp.value, temp.next.value = temp.next.value , temp.value
-                    # temp = temp.next
-                else:
-                    prev = self.head
-                    while temp != None:
-                        if temp.value > value:
-                            newnode.next = prev.next
-                            prev.next = newnode
-                        prev = temp
-                        temp = temp.next
-                        prev.next = newnode
-
-
-    def display(self):
+    def search(self, wrd):                  # Function to search for the value in a linked list
         temp = self.head
         while temp:
-            print (temp.value),
-            temp = temp.next
-
-    def pop(self):
-        temp = self.head
-        if temp is None:
-            return
-        else:
-            return temp.value
-
-    def search(self,wrd):
-        temp = self.head
-        while temp:
-            if temp.value == wrd:
+            if temp.data == wrd:
                 return True
             temp = temp.next
         return False
 
-    def remove(self,wrd):
+    def push(self, new_data):                     # Function to insert a new node at the beginning
+        new_node = Node(new_data)
+        new_node.next = self.head
+        self.head = new_node
+
+    def remove(self, wrd):                   # function to remove  a value from a linked list
         prev = None
         temp = self.head
         while temp:
-            if temp.value == wrd:
+            if temp.data == wrd:
                 if prev:
                     prev.next = temp.next
                 else:
@@ -73,16 +53,38 @@ class LinkedList:
             temp = temp.next
         return False
 
-link = LinkedList()
+    def printList(self):                          # Utility function to print the linked LinkedList
+      temp = self.head
+      while temp:
+        print(temp.data),
+        temp = temp.next
 
-with open('/home/admin9/Week1/Data structures/file_num.txt','r') as f2:
+
+link = LinkedList()                                # assigning the object
+
+with open('/home/admin9/Week1/Data structures/file_num.txt','r') as f2: # open the text file in read mode as f2
     mydata = f2.read().split()
     print(mydata)
     for i in mydata:
-        link.insert(i)
-        # print(i)
-        link.ordered()
-    link.display()
-# link.pop()
-# link.display()
-# mylist = link.sort()
+        i = int(i)
+        newnode = Node(i)                                           # inserting the data in the linked list
+        link.sortedInsert(newnode)                                  # functioncall sorting the data into the linked list
+
+link.printList()
+
+
+User = int(input('Enter a value: '))                         # ask user for a value to check
+if link.search(User):                                        # checks the value presen or absent into the sorted linkedlist
+    link.remove(User)                                        # removes the value if present in the link list
+    mydata.remove(str(User))
+    with open('/home/admin9/Week1/Data structures/file_num.txt','w+') as f2: # updating the values into the text file
+        for i in mydata:
+            f2.write('\n')
+            f2.write(i)
+else:                                                        # checks value if not present in the link list
+    User = int(User)
+    link.push(User)                                          # push the value into the link list
+    mydata.append(User)
+    with open('/home/admin9/Week1/Data structures/file_num.txt','a') as f2: # updating the list in the text file
+        f2.write('\n')
+        f2.write(str(User))
