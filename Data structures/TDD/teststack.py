@@ -14,5 +14,6 @@ class BalanceP(unittest.TestCase):
         expected = 1
         self.assertNotEqual(result, expected)
 
-if __name__  == '__main__':
+
+if __name__ == '__main__':
     unittest.main()

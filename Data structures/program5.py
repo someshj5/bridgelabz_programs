@@ -25,6 +25,7 @@ d = Deque()                             # assigning the object to the Deque clas
 
 User = input('Enter a word to check Palindrome:')  # asks for user to enter a value
 
+
 for i in User:                         # Adding the items in the value from front add
     d.addF(i)
 

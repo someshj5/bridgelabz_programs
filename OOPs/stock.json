@@ -1,0 +1,31 @@
+{
+    "StockName": [
+        {
+          "Name" : "Air",
+          "price": 450,
+          "No of Share": 10
+        },
+
+        {
+          "Name" : "L&T",
+          "price" : 500,
+          "No of Share" : 6
+        },
+
+      {
+        "Name" : "JIO",
+        "price": 700,
+        "No of Share": 8
+
+      },
+
+      {
+        "Name" : "TCS",
+        "price" : 470,
+        "No of Share": 4
+      }
+      ]
+    }
+
+
+

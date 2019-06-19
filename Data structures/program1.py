@@ -44,7 +44,7 @@ class LinkedList:                          # creating a class linked list
 
 l = LinkedList()                             # assigning the object for the linked list
 
-with open('/home/admin9/Week2/Data structures/file_word.txt','r') as file1: # opening the text file in read mode as file1
+with open('file_word.txt','r') as file1: # opening the text file in read mode as file1
     mylist = file1.read().split()            # to split the words in the text file
 
 for i in mylist:
@@ -57,13 +57,13 @@ if l.search(User):                           # searching the word in the linked 
     mylist.remove(User)                      # remove the word from the text file1
     l.display()
     print(mylist)
-    with open('/home/admin9/Week2/Data structures/file_word.txt','w+') as file1:  # updating the text file1
+    with open('file_word.txt','w+') as file1:  # updating the text file1
         for i in mylist:
             file1.write(i)
 else:
     l.append(User)                          # add the word if not in the linked list
     mylist.append(User)                     # add the word to the text file1
-    with open('/home/admin9/Week2/Data structures/file_word.txt','a+') as f1:  # updating the text file
+    with open('file_word.txt','a+') as f1:  # updating the text file
         f1.write('\n')
         f1.write(User)
 

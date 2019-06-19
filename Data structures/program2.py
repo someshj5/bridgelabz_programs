@@ -62,22 +62,22 @@ class LinkedList:
 
 link = LinkedList()                                # assigning the object
 
-with open('/home/admin9/Week1/Data structures/file_num.txt','r') as f2: # open the text file in read mode as f2
+with open('file_num.txt','r') as f2: # open the text file in read mode as f2
     mydata = f2.read().split()
     print(mydata)
     for i in mydata:
         i = int(i)
         newnode = Node(i)                                           # inserting the data in the linked list
-        link.sortedInsert(newnode)                                  # functioncall sorting the data into the linked list
+        link.sortedInsert(newnode)                                 # function call sorting the data into the linked list
 
 link.printList()
 
 
 User = int(input('Enter a value: '))                         # ask user for a value to check
-if link.search(User):                                        # checks the value presen or absent into the sorted linkedlist
+if link.search(User):                                    # checks the value presen or absent into the sorted linked list
     link.remove(User)                                        # removes the value if present in the link list
     mydata.remove(str(User))
-    with open('/home/admin9/Week1/Data structures/file_num.txt','w+') as f2: # updating the values into the text file
+    with open('file_num.txt','w+') as f2: # updating the values into the text file
         for i in mydata:
             f2.write('\n')
             f2.write(i)
@@ -85,6 +85,6 @@ else:                                                        # checks value if n
     User = int(User)
     link.push(User)                                          # push the value into the link list
     mydata.append(User)
-    with open('/home/admin9/Week1/Data structures/file_num.txt','a') as f2: # updating the list in the text file
+    with open('file_num.txt','a') as f2: # updating the list in the text file
         f2.write('\n')
         f2.write(str(User))
