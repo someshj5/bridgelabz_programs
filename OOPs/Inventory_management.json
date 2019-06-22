@@ -1,22 +1,14 @@
-
 {
-    "Inventory": [
-        {
-        "Name" : "Basmati",
-        "weight" : 12,
-        "price": 45
-        },
-
-        {
-        "Name" : "Pulses",
-        "weight": 50,
-        "price" : 30
-        },
-
-        {
-        "Name":"Wheat",
-        "weight": 50,
-        "price": 20
-        }
-    ]
+  "data": [
+    {
+      "Name": "tur",
+      "weight": "80",
+      "price": "40"
+    },
+    {
+      "Name": "rice",
+      "weight": "55",
+      "price": "80"
+    }
+  ]
 }

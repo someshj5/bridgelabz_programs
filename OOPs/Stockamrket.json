@@ -1,0 +1,24 @@
+{
+  "data": [
+    {
+      "stockname": "Jio",
+      "stockprice": 200,
+      "shares": 8
+    },
+    {
+      "stockname": "TCS",
+      "stockprice": 200,
+      "shares": 4
+    },
+    {
+      "stockname": "AIR",
+      "stockprice": 120,
+      "shares": 2
+    },
+    {
+      "stockname": "L&T",
+      "stockprice": 120,
+      "shares": 12
+    }
+  ]
+}
