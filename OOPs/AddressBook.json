@@ -1,13 +1,49 @@
 {
   "data": [
     {
-      "firstname": "dafhathteh",
-      "lastname": "tathaethjtaehj",
-      "mobile": "57427547",
+      "firstname": "ankit",
+      "lastname": "chandrawar",
+      "mobile": "8655865582",
+      "address": "pune",
+      "zipcode": "400115",
+      "city": "pune",
+      "state": "maharshtra"
+    },
+    {
+      "firstname": "ankita",
+      "lastname": "talwar",
+      "mobile": "9699656523",
+      "address": "anandnagar",
+      "zipcode": "124577",
+      "city": "goa",
+      "state": "maharashtra"
+    },
+    {
+      "firstname": "babita",
+      "lastname": "iyer",
+      "mobile": "7735865552",
+      "address": "vadachennai",
+      "zipcode": "856658",
+      "city": "Chennai",
+      "state": "karnataka"
+    },
+    {
+      "firstname": "chandu",
+      "lastname": "vetai",
+      "mobile": "867896544",
+      "address": "rupnagar",
+      "zipcode": "256396",
+      "city": "jaipur",
+      "state": "Gujrat"
+    },
+    {
+      "firstname": "somesh",
+      "lastname": "jaiswal",
+      "mobile": "8286828682",
       "address": "khardev",
-      "zipcode": "725477547",
-      "city": "Mumbai",
-      "state": "Maharashtra"
+      "zipcode": "400071",
+      "city": "mumbai",
+      "state": "maharas"
     }
   ]
 }

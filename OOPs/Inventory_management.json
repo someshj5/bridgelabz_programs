@@ -2,13 +2,23 @@
   "data": [
     {
       "Name": "tur",
-      "weight": "80",
-      "price": "40"
+      "weight": 80,
+      "price": 60
     },
     {
       "Name": "rice",
-      "weight": "55",
-      "price": "80"
+      "weight": 110,
+      "price": 69
+    },
+    {
+      "Name": "pulse",
+      "weight": 80,
+      "price": 25
+    },
+    {
+      "Name": "Brrice",
+      "weight": 670,
+      "price": 80
     }
   ]
 }

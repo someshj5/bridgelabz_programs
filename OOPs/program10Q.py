@@ -26,4 +26,4 @@ class Queue:
             self.head = self.head.next
             print(to_return)
 
-q =Queue()
+# q =Queue()

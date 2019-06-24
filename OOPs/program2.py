@@ -1,9 +1,9 @@
-import re
-from datetime import date
-import sys
+import re                                     # importing REGULAR EXPRESSION
+from datetime import date                     # importing datetime module
+import sys                                    # importing sys module
 
 
-def regularExp():
+def regularExp():                             # Function to replace the text using REGULAR EXPRESSION
 
     mystring = '''Hello <<name>>, We have your full name as <<full name>> in our system.",
                 your contact number is 91-xxxxxxxxxx.",
@@ -13,20 +13,19 @@ def regularExp():
     today = date.today()
     d = today.strftime('%d/%m/%Y')
     try:
-        first_name = input('Enter your firstname: ')
-        if not re.match("^[a-zA-Z]*$", first_name):
+        first_name = input('Enter your firstname: ')       # asks user for input firstname
+        if not re.match("^[a-zA-Z]*$", first_name):        # regex if invalid data
             print("Error! Only letters a-z allowed!")
 
-        last_name = input('Enter your lastname')
-        if not re.match("^[a-zA-Z]*$", first_name):
+        last_name = input('Enter your lastname')          # asks user for lastname
+        if not re.match("^[a-zA-Z]*$", last_name):        # Checkiing the input usein regex
             print("Error! Only letters a-z allowed!")
             sys.exit()
 
-        mobile = input('\n Enter your mobile number '+'\n ie: 91-xxxxxxxxxx')
+        mobile = input('\n Enter your mobile number '+'\n ie: 91-xxxxxxxxxx')  # input mobile number
         if len(str(mobile)) > 10:
             raise ValueError
-
-        if not re.match("^[0-9]*$", first_name):
+        if not re.match("^[0-9]*$", first_name):                               # regex to check number
             print("Error! Only numericals 0-9 allowed!")
 
         if first_name.isalpha() and last_name.isalpha() and  mobile.isdigit():
@@ -36,26 +35,13 @@ def regularExp():
             pattern = ['<<name>>','<<full name>>','91-xxxxxxxxxx',' 01/01/2016']
 
             for i in range(4):
-                mystring = re.sub(pattern[i],data[i],mystring)
+                mystring = re.sub(pattern[i],data[i],mystring)               # regular expression to replace patterns by User data
             print(mystring)
         else:
             raise ValueError
-    except ValueError:
+    except ValueError:                                                      # exception handling for value error
         print('Please specific value at specific place')
 
 
 regularExp()
 
-
-    # month = int(input('Enter the month in numbers: '))
-    # if len(str(month)) > 2:
-    #     print('Enter 2 digits only')
-    # year = int(input('Enter the year: '))
-    # if len(str(year)) <= 3 and len(str(year)) > 4:
-    #     print('Enter 4 digits only')
-
-    # if not re.match("^[a-z]*$", first_name):
-    #     print("Error! Only letters a-z allowed!")
-
-    # if not re.match("^[a-z]*$", Full_name):
-    #     print("Error! Only letters a-z allowed!")

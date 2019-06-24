@@ -10,7 +10,7 @@ class Address:
 
     def Create(self):
         self.lst = {'data':[]}
-        filename = input('Enter a file name')
+        filename = input('Create a file name')
         with open(filename+'.json','w') as f1:
             json.dump(self.lst,f1,indent=2)
             f1.close()
@@ -21,14 +21,26 @@ class Address:
         with open(filename+'.json','r') as f1:
             self.lst = json.load(f1)
 
-
     def sort(self):
-        print(self.lst)
-        self.lst = sorted(self.lst)
-        print(self.lst)
+        for i in range(len(self.lst['data'])):
+            for j in range(len(self.lst['data'])):
+                if int(self.lst['data'][i]['zipcode']) < int(self.lst['data'][j]['zipcode']):
+                    (self.lst['data'][i],self.lst['data'][j]) = (self.lst['data'][j],self.lst['data'][i])
+        print(self.lst['data'])
+        self.save()
+        self.print()
+
+    def sortName(self):
+        for i in range(len(self.lst['data'])):
+            for j in range(len(self.lst['data'])):
+                if self.lst['data'][i]['firstname'] < self.lst['data'][j]['firstname']:
+                    (self.lst['data'][i],self.lst['data'][j]) = (self.lst['data'][j],self.lst['data'][i])
+        print(self.lst['data'])
+        self.save()
+        self.print()
 
     def add(self):
-        addnew={}
+        addnew = {}
         try:
             first_name = input('Enter your first name: ')
             last_name = input('Enter your lastname: ')
@@ -47,6 +59,7 @@ class Address:
                 addnew['city'] = city
                 addnew['state'] = state
                 self.lst['data'].append(addnew)
+                print('tttt')
                 self.save()
                 self.print()
         except ValueError:
@@ -117,18 +130,18 @@ class Address:
     def print(self):
         try:
             if len(self.lst['data']) >= 1:
-                print('\n------------- ADDRESS BOOK ---------------\n')
-                print('First Name\t\tLast Name\t  Mobile number\t  Address\t City\t\tState\t\t\tZipcode')
-                print('-----------------------------------------------------------------------------------------------')
+                print('\n----------------------------------------------------- ADDRESS BOOK --------------------------------------------------------------\n')
+                print('First Name\t\t\tLast Name\t\t\t  Mobile number\t\t\t  Address\t\t\t City\t\t\tState\t\t\t\tZipcode')
+                print('-------------------------------------------------------------------------------------------------------------------------')
                 for i in range(len(self.lst['data'])):
-                    print(self.lst['data'][i]['firstname'],'\t  ',self.lst['data'][i]['lastname'],
-                          self.lst['data'][i]['mobile'],'\t\t',self.lst['data'][i]['address'],'\t',
-                          self.lst['data'][i]['city'],'\t',self.lst['data'][i]['state'],'\t',
+                    print(self.lst['data'][i]['firstname'],'\t\t  ',self.lst['data'][i]['lastname'],
+                          '\t\t\t    ',self.lst['data'][i]['mobile'],'\t\t\t    ',self.lst['data'][i]['address'],'\t\t\t  ',
+                          self.lst['data'][i]['city'],'  \t\t\t    ',self.lst['data'][i]['state'],'\t\t\t\t',
                           self.lst['data'][i]['zipcode'])
             else:
                 print('No record found')
                 ch = input('Do you want to Add new record? : Enter = y/n ')
-                if ch.upper == Y:
+                if ch.upper() == 'Y':
                     self.add()
                 else:
                     sys.exit()
